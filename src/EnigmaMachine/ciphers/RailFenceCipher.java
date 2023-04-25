@@ -1,3 +1,5 @@
+package ciphers;
+
 // RailFence Cipher
 // Mehrad Hajati
 // 19/09/2021

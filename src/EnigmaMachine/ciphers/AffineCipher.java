@@ -1,3 +1,5 @@
+package ciphers;
+
 // Affine Cipher
 // Mehrad Hajati
 // 19/09/2021
@@ -65,7 +67,7 @@ public class AffineCipher{
 
 
 
-    //Main Method
+    /*Main Method
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
@@ -99,5 +101,5 @@ public class AffineCipher{
             System.out.println("Your plaintext is: " + decrypt(cipherText, a, b));
         }
         sc.close();
-    }
+    }*/
 }

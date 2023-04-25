@@ -1,16 +1,26 @@
+package EnigmaMachine;
+
+import ciphers.AffineCipher;
+import ciphers.AtbashCipher;
+import ciphers.CaesarCipher;
+import ciphers.MatrixCipher;
+import ciphers.RailFenceCipher;
+import ciphers.VigenereCipher;
 
 import java.util.Scanner;
 /*
- * The Enigma Machine class is supposed to be the Controller in the MVC strcuture
+ * The Enigma Machine class is supposed to be the  model in the MVC strcuture
+ * The Ciphers package will process the inputs and give the outputs
  */
 public class EnigmaMachine{
 
     // this instance variable will keep track of whether we are encoding or deconding, if true its we are encoding, false otherwise
     boolean encoding = true;
+    ViewManager viewManager;
 
 
-    public EnigmaMachine(){
-        
+    public EnigmaMachine(ViewManager con){
+        viewManager = con;
     }
 
     // Method for changing the mode from encoding to decoding and vice versa
@@ -40,13 +50,9 @@ public class EnigmaMachine{
     public static String encryptCaesar(String plainText, int key){ return CaesarCipher.encrypt(plainText, key); }
     public static String decryptCaesar(String cipherText, int key){ return CaesarCipher.decrypt(cipherText, key); }
 
-    public static boolean checkCipherInput(int num){
-        if(num > 0 && num < 7){
-            return true;
-        }
-        return false;
-    }
+    public static boolean checkCipherInput(int num){ return num > 0 && num < 7; }
 
+    /*
     public static void main(String[] args){
         int cipher = 0;
         Scanner sc = new Scanner(System.in);
@@ -150,5 +156,5 @@ public class EnigmaMachine{
         }
 
 
-    }
+    }*/
 }
