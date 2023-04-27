@@ -1,4 +1,4 @@
-package ciphers;
+package EnigmaMachine.ciphers;
 
 // RailFence Cipher
 // Mehrad Hajati

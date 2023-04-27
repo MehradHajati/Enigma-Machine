@@ -1,4 +1,4 @@
-package ciphers;
+package EnigmaMachine.ciphers;
 
 // Vigenere Cipher
 // Mehrad Hajati

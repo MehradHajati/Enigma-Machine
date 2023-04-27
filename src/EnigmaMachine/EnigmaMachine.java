@@ -1,11 +1,11 @@
 package EnigmaMachine;
 
-import ciphers.AffineCipher;
-import ciphers.AtbashCipher;
-import ciphers.CaesarCipher;
-import ciphers.MatrixCipher;
-import ciphers.RailFenceCipher;
-import ciphers.VigenereCipher;
+import EnigmaMachine.ciphers.AffineCipher;
+import EnigmaMachine.ciphers.AtbashCipher;
+import EnigmaMachine.ciphers.CaesarCipher;
+import EnigmaMachine.ciphers.MatrixCipher;
+import EnigmaMachine.ciphers.RailFenceCipher;
+import EnigmaMachine.ciphers.VigenereCipher;
 
 /*
  * The Enigma Machine class is supposed to be the  model in the MVC strcuture

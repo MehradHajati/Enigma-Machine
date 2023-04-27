@@ -1,4 +1,4 @@
-package ciphers;
+package EnigmaMachine.ciphers;
 
 // Caesar Cipher 2
 // Mehrad Hajati

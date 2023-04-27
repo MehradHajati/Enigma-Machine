@@ -1,4 +1,4 @@
-package ciphers;
+package EnigmaMachine.ciphers;
 
 // Affine Cipher
 // Mehrad Hajati
@@ -32,7 +32,7 @@ public class AffineCipher{
             char letter = msg.charAt(i);
             for(int j = 0; j < ALPHABET_LENGTH; j++){
                 if(letter == ALPHABET.charAt(j)){
-                    cipherText += ALPHABET.charAt(((j*a) + b) % ALPHABET_LENGTH);
+                    cipherText += ALPHABET.charAt(modAlphabetLength(((j*a) + b)));
                     break;
                 }
             }
@@ -53,10 +53,10 @@ public class AffineCipher{
                 if(letter == ALPHABET.charAt(j)){
                     int noMod = (j-b) * euclid;
                     if( noMod < 0){
-                        plainText += ALPHABET.charAt(ALPHABET_LENGTH - (Math.abs(noMod) % ALPHABET_LENGTH));
+                        plainText += ALPHABET.charAt(ALPHABET_LENGTH - modAlphabetLength(Math.abs(noMod))); 
                     }
                     else{
-                        plainText += ALPHABET.charAt(noMod % ALPHABET_LENGTH);
+                        plainText += ALPHABET.charAt(modAlphabetLength(noMod));
                     }
                     break;
                 }
@@ -65,7 +65,12 @@ public class AffineCipher{
         return plainText.toUpperCase();
     }
 
-
+    public static int modAlphabetLength(int a){
+        while(a < 0){
+            a = a + ALPHABET_LENGTH;
+        }
+        return a % ALPHABET_LENGTH;
+    }
 
     /*Main Method
     public static void main(String[] args){
