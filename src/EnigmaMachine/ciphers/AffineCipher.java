@@ -53,7 +53,7 @@ public class AffineCipher{
                 if(letter == ALPHABET.charAt(j)){
                     int noMod = (j-b) * euclid;
                     if( noMod < 0){
-                        plainText += ALPHABET.charAt(ALPHABET_LENGTH - modAlphabetLength(Math.abs(noMod))); 
+                        plainText += ALPHABET.charAt(modAlphabetLength(ALPHABET_LENGTH - modAlphabetLength(Math.abs(noMod)))); 
                     }
                     else{
                         plainText += ALPHABET.charAt(modAlphabetLength(noMod));
