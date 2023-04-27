@@ -8,7 +8,7 @@ import EnigmaMachine.gui.CaesarPanel;
 import EnigmaMachine.gui.MatrixPanel;
 import EnigmaMachine.gui.RailFencePanel;
 import EnigmaMachine.gui.VigenerePanel;
-import gui.JFrameExit;
+import EnigmaMachine.gui.JFrameExit;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;

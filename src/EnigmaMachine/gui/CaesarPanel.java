@@ -2,7 +2,6 @@ package EnigmaMachine.gui;
 
 import EnigmaMachine.ViewManager;
 import EnigmaMachine.EnigmaMachine;
-import EnigmaMachine.Dialogs;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -23,11 +22,12 @@ import javax.swing.JTextField;
  */
 public class CaesarPanel extends JPanel{
     
-    private ViewManager viewManager;
+    private final ViewManager viewManager;
+    private final GridBagConstraints constraints;
+    
     private JLabel cipherName, cipherIntro, enterKey, enterText, output;
     private JTextField key, input;
     private JButton encryptButton, decryptButton;
-    private GridBagConstraints constraints;
     
     public CaesarPanel(ViewManager view){
         viewManager = view;

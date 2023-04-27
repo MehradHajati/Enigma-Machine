@@ -1,4 +1,4 @@
-package gui;
+package EnigmaMachine.gui;
 
 import java.awt.Component;
 import javax.swing.JOptionPane;
