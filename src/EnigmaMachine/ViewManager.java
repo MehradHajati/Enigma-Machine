@@ -1,7 +1,6 @@
 package EnigmaMachine;
 
 import EnigmaMachine.gui.MenuBar;
-import EnigmaMachine.EnigmaMachine;
 import EnigmaMachine.gui.AffinePanel;
 import EnigmaMachine.gui.AtBashPanel;
 import EnigmaMachine.gui.CaesarPanel;
@@ -9,25 +8,17 @@ import EnigmaMachine.gui.MatrixPanel;
 import EnigmaMachine.gui.RailFencePanel;
 import EnigmaMachine.gui.VigenerePanel;
 import EnigmaMachine.gui.JFrameExit;
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 
 /**
  * 
  * @author Mehrad Hajati
  * This class will act as both the ViewManager and the controller in the MVC structure
  */
-public class ViewManager extends JFrameExit implements ActionListener {
+public class ViewManager extends JFrameExit{
 
     public final int AFFINE = 1;
     public final int ATBASH = 2;
@@ -95,49 +86,46 @@ public class ViewManager extends JFrameExit implements ActionListener {
         // Get the content pane:
         Container contentPane = getContentPane();
         contentPane.removeAll();
+        
+        
         switch(currentCipher){
-            
+    
             case AFFINE:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(affinePanel);
-                affinePanel.revalidate();
                 break;
                 
             case ATBASH:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(atbashPanel);
-                atbashPanel.revalidate();
                 break;
                 
             case CAESAR:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(caesarPanel);
-                caesarPanel.revalidate();
                 break;
                 
             case MATRIX:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(matrixPanel);
-                matrixPanel.revalidate();
                 break;
                 
             case RAILFENCE:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(railPanel);
-                railPanel.revalidate();
                 break;
             
             case VIGENERE:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(vigenerePanel);
-                vigenerePanel.revalidate();
                 break;
         }
-                
-    }
-    
-    public void actionPerformed(ActionEvent e) {
         
+        // Have to refresh or else the changes don't show up immediately.
+        contentPane.validate();
+        contentPane.setVisible(true);
+        contentPane.repaint();
+                
     }
 
     
