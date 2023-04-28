@@ -11,6 +11,7 @@ public class VigenereCipher{
 
     // Constants
     private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+    private static final int ALPHABET_LENGTH = 26;
 
 
     // Method to generate key
@@ -35,7 +36,7 @@ public class VigenereCipher{
         int[] array = new int[length]; 
         for(int i = 0; i < length; i++){
             char letter = input.charAt(i);
-            for(int j = 0; j < 26; j++){
+            for(int j = 0; j < ALPHABET_LENGTH; j++){
                 if(letter == ALPHABET.charAt(j)){
                     array[i] = j;
                     break;
@@ -55,7 +56,7 @@ public class VigenereCipher{
         int[] textPositions = findPosition(plainText);
         for(int i = 0; i < length; i++){
             int letterPosition = keyPositions[i%key.length()] + textPositions[i];
-            cipherText += ALPHABET.charAt(letterPosition % 26);
+            cipherText += ALPHABET.charAt(modAlphabetLength(letterPosition));
         }
         return cipherText.toUpperCase();
     }
@@ -72,15 +73,22 @@ public class VigenereCipher{
         for(int i = 0; i < length; i++){
             int letterPosition = textPositions[i] - keyPositions[i%key.length()];
             if(letterPosition < 0){
-                plainText += ALPHABET.charAt(26 - (Math.abs(letterPosition)%26));
+                plainText += ALPHABET.charAt(ALPHABET_LENGTH - modAlphabetLength(Math.abs(letterPosition)));
             }
             else{
-                plainText += ALPHABET.charAt(letterPosition % 26);
+                plainText += ALPHABET.charAt(modAlphabetLength(letterPosition));
             }
         }
         return plainText.toUpperCase();
     }
 
+    public static int modAlphabetLength(int a){
+        while(a < 0){
+            a = a + ALPHABET_LENGTH;
+        }
+        return a % ALPHABET_LENGTH;
+    }
+    
     // Main Method
     /*public static void main(String [] args){
         
