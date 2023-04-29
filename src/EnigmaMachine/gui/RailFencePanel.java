@@ -53,7 +53,8 @@ public class RailFencePanel extends JPanel{
         
         //Creating the label which will explain how the cipher works and changing its font
         cipherIntro = new JLabel("<html>Assume each letter in the alphabet is numbered from 0-25.<br> "
-                + "In the Ceasar Cipher, using one integer keys A, the data is encrypted by shifting the letters by A in the alphabet and then modding by 26.<html>");
+                + "In the RailFence cipher, the plaintext is written downwards diagonally on successive \"rails\" of an imagniary fence, and when the bottom is reached we move upwards.<br>"
+                + "This continues until the plaintext is over and the ciphertext is read off from the rows. The number of rails is determined by the key.<html>");
         cipherIntro.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 10));
         
         // creating the label that will tell the user to type in their cipher or plain text and changing its font

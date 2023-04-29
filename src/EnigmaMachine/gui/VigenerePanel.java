@@ -176,7 +176,7 @@ public class VigenerePanel extends JPanel{
             }
         }
         else{
-            Dialogs.error(viewManager, "The key you have entered is invalid, ensure it is a number", "Invalid Key");
+            Dialogs.error(viewManager, "The key you have entered is invalid, ensure it contains only the English alphabet", "Invalid Key");
         }
     }
     
