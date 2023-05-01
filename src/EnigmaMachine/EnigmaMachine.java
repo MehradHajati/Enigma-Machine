@@ -6,6 +6,7 @@ import EnigmaMachine.ciphers.CaesarCipher;
 import EnigmaMachine.ciphers.MatrixCipher;
 import EnigmaMachine.ciphers.RailFenceCipher;
 import EnigmaMachine.ciphers.VigenereCipher;
+import EnigmaMachine.ciphers.BaconianCipher;
 
 /*
  * The Enigma Machine class is supposed to be the  model in the MVC strcuture
@@ -45,5 +46,9 @@ public class EnigmaMachine{
     // Wrapper methods for CaesarCipher class
     public static String encryptCaesar(String plainText, int key){ return CaesarCipher.encrypt(plainText, key); }
     public static String decryptCaesar(String cipherText, int key){ return CaesarCipher.decrypt(cipherText, key); }
+    
+    // Wrapper methods for the BaconianCipher class
+    public static String encryptBaconian(String plainText){ return BaconianCipher.encrypt(plainText); }
+    public static String decryptBaconian(String cipherText){ return BaconianCipher.decrypt(cipherText); }
 
 }

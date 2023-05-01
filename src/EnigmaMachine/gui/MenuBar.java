@@ -14,7 +14,7 @@ public final class MenuBar extends JMenuBar {
     
     private final ViewManager viewManager;
     private JMenu mainMenu, changeCipher;
-    private JMenuItem about, exit, affine, atBash, caesar, matrix, railFence, vigenere;
+    private JMenuItem about, exit, affine, atBash, caesar, matrix, railFence, vigenere, baconian;
     
     /** Makes the menu bar.
      * @param view the window that the menu bar will be placed on.
@@ -42,6 +42,7 @@ public final class MenuBar extends JMenuBar {
         matrix = makeMenuItem("Matrix/Hill Cipher", "Change the cipher being used to the Matrix/Hill Cipher", listener);
         railFence = makeMenuItem("RailFence Cipher", "Change the cipher being used to the RailFence Cipher", listener);
         vigenere = makeMenuItem("Vigenere Cipher", "Change the cipher being used to the Vigenere Cipher", listener);
+        baconian = makeMenuItem("Baconian Cipher", "Change the cipher being used to the Baconian Cipher", listener);
     }
     
     private JMenuItem makeMenuItem(String text, String tip, ActionListener al) {
@@ -70,6 +71,7 @@ public final class MenuBar extends JMenuBar {
         changeCipher.add(matrix);
         changeCipher.add(railFence);
         changeCipher.add(vigenere);
+        changeCipher.add(baconian);
         
     }
     
@@ -87,7 +89,7 @@ public final class MenuBar extends JMenuBar {
             else if(src == matrix) {viewManager.changeCipher(viewManager.MATRIX); }
             else if(src == railFence) {viewManager.changeCipher(viewManager.RAILFENCE); }
             else if(src == vigenere) {viewManager.changeCipher(viewManager.VIGENERE); }
-            
+            else if(src == baconian) {viewManager.changeCipher(viewManager.BACONIAN); }
         }
     }
     

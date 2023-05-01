@@ -7,6 +7,7 @@ import EnigmaMachine.gui.CaesarPanel;
 import EnigmaMachine.gui.MatrixPanel;
 import EnigmaMachine.gui.RailFencePanel;
 import EnigmaMachine.gui.VigenerePanel;
+import EnigmaMachine.gui.BaconianPanel;
 import EnigmaMachine.gui.JFrameExit;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -26,6 +27,7 @@ public class ViewManager extends JFrameExit{
     public final int MATRIX = 4;
     public final int RAILFENCE = 5;
     public final int VIGENERE = 6;
+    public final int BACONIAN = 7;
     
     private final EnigmaMachine model;
     private int currentCipher = AFFINE;
@@ -37,6 +39,7 @@ public class ViewManager extends JFrameExit{
     private MatrixPanel matrixPanel;
     private RailFencePanel railPanel;
     private VigenerePanel vigenerePanel;
+    private BaconianPanel baconianPanel;
             
     public ViewManager(){
         // Create the window with a title
@@ -77,6 +80,8 @@ public class ViewManager extends JFrameExit{
         vigenerePanel = new VigenerePanel(this);
         vigenerePanel.setBorder(BorderFactory.createEtchedBorder());
         
+        baconianPanel = new BaconianPanel(this);
+        baconianPanel.setBorder(BorderFactory.createEtchedBorder());
     }
     
     private void addObjects(){
@@ -118,6 +123,11 @@ public class ViewManager extends JFrameExit{
             case VIGENERE:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(vigenerePanel);
+                break;
+                
+            case BACONIAN:
+                contentPane.setLayout(new GridLayout(1,1));
+                contentPane.add(baconianPanel);
                 break;
         }
         
