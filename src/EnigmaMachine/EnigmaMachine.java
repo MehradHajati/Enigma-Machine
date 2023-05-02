@@ -7,6 +7,7 @@ import EnigmaMachine.ciphers.MatrixCipher;
 import EnigmaMachine.ciphers.RailFenceCipher;
 import EnigmaMachine.ciphers.VigenereCipher;
 import EnigmaMachine.ciphers.BaconianCipher;
+import EnigmaMachine.ciphers.ADFGVXCipher;
 
 /*
  * The Enigma Machine class is supposed to be the  model in the MVC strcuture
@@ -50,5 +51,8 @@ public class EnigmaMachine{
     // Wrapper methods for the BaconianCipher class
     public static String encryptBaconian(String plainText){ return BaconianCipher.encrypt(plainText); }
     public static String decryptBaconian(String cipherText){ return BaconianCipher.decrypt(cipherText); }
-
+    
+    // Wrapper methods for the ADFGVXCipher class
+    public static String encryptADFGVX(String plainText, String key){ return ADFGVXCipher.encrypt(plainText, key); }
+    public static String decryptADFGVX(String plainText, String key){ return ADFGVXCipher.decrypt(plainText, key); }
 }

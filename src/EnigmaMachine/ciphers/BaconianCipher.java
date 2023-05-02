@@ -45,41 +45,27 @@ public class BaconianCipher {
         }
         return plainText.toUpperCase();
     }
-
-    // Function to find the index of an element
-    public static int findIndex(String[] arr, String sub){
-        // doing a bianry search to find the corresponding 5 letters and return its index
-        int index = Arrays.binarySearch(arr, sub);
-        return (index < 0) ? -1 : index;
+    
+    // Linear-search function to find the index of an element
+    private static int findIndex(String[] arr, String sub){
+        // if array is Null
+        if (arr == null) {
+            return -1;
+        }
+        // find length of array
+        int len = arr.length;
+        int i = 0;
+        // traverse in the array
+        while (i < len) {
+            // if the i-th element is t
+            // then return the index
+            if (arr[i].equals(sub)){
+                return i;
+            }
+            else{
+                i = i + 1;
+            }
+        }
+        return -1;
     }
-
-    //Main Method
-    /*public static void main(String[] args){
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Would you like to encrypt or decrypt?");
-        String answer = sc.next().toLowerCase();
-        while (!(answer.equals("encrypt") || (answer.equals("decrypt")))){
-            System.out.println("Please try again!");
-            System.out.println("Would you like to encrypt or decrypt?");
-            answer = sc.next().toLowerCase();
-        }
-
-        //Encryption part
-        if(answer.equals("encrypt")){
-            System.out.println("Please enter the message you would like to encrypt:");
-            sc.nextLine();
-            String plainText = sc.nextLine();
-            System.out.println("Your CipherText is: " + encrypt(plainText));
-        }
-
-        //Decryption part
-        if(answer.equals("decrypt")){
-            System.out.println("Please enter the ciphertext you would like to decrypt:");
-            sc.nextLine();
-            String cipherText = sc.nextLine();
-            System.out.println("Your plaintext is: " + decrypt(cipherText));
-        }
-        sc.close();
-    }*/
 }
