@@ -8,6 +8,7 @@ import EnigmaMachine.ciphers.RailFenceCipher;
 import EnigmaMachine.ciphers.VigenereCipher;
 import EnigmaMachine.ciphers.BaconianCipher;
 import EnigmaMachine.ciphers.ADFGVXCipher;
+import EnigmaMachine.ciphers.ColumnarTranspositionCipher;
 
 /*
  * The Enigma Machine class is supposed to be the  model in the MVC strcuture
@@ -55,4 +56,8 @@ public class EnigmaMachine{
     // Wrapper methods for the ADFGVXCipher class
     public static String encryptADFGVX(String plainText, String key){ return ADFGVXCipher.encrypt(plainText, key); }
     public static String decryptADFGVX(String plainText, String key){ return ADFGVXCipher.decrypt(plainText, key); }
+    
+    // Wrapper methods for the ColumnarTransposionCipher class
+    public static String encryptColumnarTransposition(String plainText, String key){ return ColumnarTranspositionCipher.encrypt(plainText, key); }
+    public static String decryptColumnarTransposition(String plainText, String key){ return ColumnarTranspositionCipher.decrypt(plainText, key); }
 }

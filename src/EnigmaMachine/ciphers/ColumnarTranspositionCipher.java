@@ -21,7 +21,13 @@ public class ColumnarTranspositionCipher {
         int plainTextLength = plainText.length();
         
         //creating an array that will hold the positions before the columnar transposition
-        char[][] columnarPositions = new char[(int)Math.round((double)plainTextLength/ keyLength)][keyLength];
+        char[][] columnarPositions;
+        if(plainTextLength % keyLength == 0){
+            columnarPositions = new char[plainTextLength/ keyLength][keyLength];
+        }
+        else{
+            columnarPositions = new char[(plainTextLength/ keyLength)+1][keyLength];
+        }
         
         // filling the columnarPositions array with the plain text
         // using this temp variable to keep track of where we are in the plain text and using the loops the go through the double array
@@ -33,22 +39,25 @@ public class ColumnarTranspositionCipher {
                     temp++;
                 }
                 else{
-                    columnarPositions[i][j] = '0';
+                    // setting the empty cells to contain -
+                    columnarPositions[i][j] = '-';
                 }
             }
         }
         
-        // sorting the key alphabetically
-        char[] sortedKey = sortKeyAlphabetically(key);
+        for(int i = 0; i < columnarPositions.length; i++){
+            System.out.println(Arrays.toString(columnarPositions[i]));
+        }
+        
         // the newPositions array tells us how the columns change ordering
-        int[] newPositions = getColumnOrdering(key, sortedKey);
+        int[] newPositions = getColumnOrdering(key);
         // iterting over the columns first and then the rows
         for(int j = 0; j < columnarPositions[0].length; j++){
             for(int i = 0; i < columnarPositions.length; i++){
                 // finding the new ordering of the column
                 int index = findIndex(newPositions, j);
-                // checking if the cell is empty or not, the zero int gets translated to zero in char which means empty in char[]
-                if(columnarPositions[i][index] != '0'){
+                // checking if the cell is empty or not, the - tells us that its empty
+                if(columnarPositions[i][index] != '-'){
                     cipherText = cipherText + columnarPositions[i][index];
                 }
             }
@@ -59,7 +68,34 @@ public class ColumnarTranspositionCipher {
 
     // Decryption Method
     public static String decrypt(String cipherText, String key){
-        return null;
+        String plaintText = "";
+        int keyLength = key.length();
+        int cipherTextLength = cipherText.length();
+        int mod = cipherTextLength % keyLength;
+        //creating an array that will hold how the 
+        char[][] transposedPositions;
+        if(mod == 0){
+            transposedPositions = new char[cipherTextLength/ keyLength][keyLength];
+        }
+        else{
+            transposedPositions = new char[(cipherTextLength/ keyLength)+1][keyLength];
+        }
+        
+        for(int j = 0; j < transposedPositions[0].length; j++){
+            int index;
+            for(int i = 0; i < transposedPositions.length; i++){
+                if(i == (transposedPositions.length-1)){
+                    if(mod > 0){
+                        mod--;
+                    }
+                }
+                else{
+                    
+                }
+            }
+        }
+        char[] sortedKey = sortKeyAlphabetically(key);
+        int[] newPositions = getColumnOrdering(key);
     }
     
     /**
@@ -77,10 +113,10 @@ public class ColumnarTranspositionCipher {
     /**
      * This method will use the key and the key sorted alphabetically to get the ordering for the columnar transpositions
      * @param key the key for the cipher
-     * @param sortedKey the key with letter sorted alphabetically
      * @return an int array and each element tells us where its new positions or destination of that index is
      */
-    private static int[] getColumnOrdering(String key, char[] sortedKey){
+    private static int[] getColumnOrdering(String key){
+        char[] sortedKey = sortKeyAlphabetically(key);
         int[] newPositions = new int[sortedKey.length];
         for(int i = 0; i < sortedKey.length; i++){
             char letter = key.charAt(i);

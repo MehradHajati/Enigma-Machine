@@ -41,13 +41,14 @@ public class ADFGVXCipher {
      */
     public static String decrypt(String cipherText, String key){
         // getting the index position on the Polybius square
-        int[][] polySquare = usePolybiusSquare(cipherText);
+        //int[][] polySquare = usePolybiusSquare(cipherText);
         // converting the index position to the ADFGVX alphebet
-        String interCT = switchAlphabet(polySquare);
+        //String interCT = switchAlphabet(polySquare);
         // reversing the columnarTransposition on them
-        String interCT2 = reverseColumnarTransposition(interCT, key);
+        //String interCT2 = reverseColumnarTransposition(interCT, key);
         // using the Polybius Square again to turn them back into the english alphabet and returning it
-        return switchBackAlphabet(interCT2);
+        //return switchBackAlphabet(interCT2);
+        return null;
     }
     
     /**
