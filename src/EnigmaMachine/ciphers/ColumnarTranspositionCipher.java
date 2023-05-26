@@ -68,7 +68,7 @@ public class ColumnarTranspositionCipher {
 
     // Decryption Method
     public static String decrypt(String cipherText, String key){
-        String plaintText = "";
+        /*String plaintText = "";
         int keyLength = key.length();
         int cipherTextLength = cipherText.length();
         int mod = cipherTextLength % keyLength;
@@ -95,7 +95,8 @@ public class ColumnarTranspositionCipher {
             }
         }
         char[] sortedKey = sortKeyAlphabetically(key);
-        int[] newPositions = getColumnOrdering(key);
+        int[] newPositions = getColumnOrdering(key);*/
+        return "hello";
     }
     
     /**

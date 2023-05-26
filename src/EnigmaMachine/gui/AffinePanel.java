@@ -53,8 +53,8 @@ public class AffinePanel extends JPanel{
         cipherName.setFont(font.deriveFont(attributes));
         
         //Creating the label which will explain how the cipher works and changing its font
-        cipherIntro = new JLabel("<html>Assume each letter in the alphabet is numbered from 0-25.<br> "
-                + "In the Affine cipher, using two integers keys A and B, the text is encrypted by multiplying each letter's corresponding number by A and then adding B to the results.<br> The results is then modded by 26 and converted back into a letter.<html>");
+        cipherIntro = new JLabel("<html>Assume each letter in the alphabet is numbered from 0-25.<br> ");
+                //+ "In the Affine cipher, using two integers keys A and B, the text is encrypted by multiplying each letter's corresponding number by A and then adding B to the results. The results is then modded by 26 and converted back into a letter.<html>");
         cipherIntro.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 10));
         
         // creating the label that will tell the user to type in their cipher or plain text and changing its font

@@ -53,8 +53,8 @@ public class MatrixPanel extends JPanel{
         
         //Creating the label which will explain how the cipher works and changing its font
         cipherIntro = new JLabel("<html>Assume each letter in the alphabet is numbered from 0-25.<br> "
-                + "The Matrix or Hill cipher is a polygraphic substituion cipher that uses linear algebra to encrypt and decrypt data.<br>"
-                + "The key is converted into a matrix and then the plaintext is also converted to matrices of similiar sizes and multiplied by the key matrix, which gives us the ciphertext.<br>"
+                //+ "The Matrix or Hill cipher is a polygraphic substituion cipher that uses linear algebra to encrypt and decrypt data.<br>"
+                //+ "The key is converted into a matrix and then the plaintext is also converted to matrices of similiar sizes and multiplied by the key matrix, which gives us the ciphertext.<br>"
                 + "To decrypt, the inverse matrix of the key is calculated to get the original plaintext matrices.<html>");
         cipherIntro.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 10));
         
