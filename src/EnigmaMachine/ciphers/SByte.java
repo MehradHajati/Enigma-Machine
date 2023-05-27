@@ -86,12 +86,13 @@ public class SByte {
         return num;
     }
     
+    /*
     public static void main(String args[]){
         SByte one = new SByte(25);
         SByte two = new SByte(16);
         System.out.println(Arrays.toString(one.getArray()));
         System.out.println(Arrays.toString(two.getArray()));
-        System.out.println(one.toInt());
-        System.out.println(two.toInt());
-    }
+        SByte result = XOR(one, two);
+        System.out.println(result.toInt());
+    }*/
 }
