@@ -14,7 +14,7 @@ public final class MenuBar extends JMenuBar {
     
     private final ViewManager viewManager;
     private JMenu mainMenu, changeCipher;
-    private JMenuItem about, exit, affine, atBash, caesar, matrix, railFence, vigenere, baconian, adfgvx, cTrans;
+    private JMenuItem about, exit, affine, atBash, caesar, matrix, railFence, vigenere, baconian, adfgvx, cTrans, vernam;
     
     /** Makes the menu bar.
      * @param view the window that the menu bar will be placed on.
@@ -45,6 +45,7 @@ public final class MenuBar extends JMenuBar {
         baconian = makeMenuItem("Baconian Cipher", "Change the cipher being used to the Baconian Cipher", listener);
         adfgvx = makeMenuItem("ADFGVX Cipher", "Change the cipher being used to the ADFGVX Cipher", listener);
         cTrans = makeMenuItem("Col. Transposition Cipher", "Change the cipher being used to the Columnar Transposition Cipher", listener);
+        vernam = makeMenuItem("Vernam Cipher", "Change the cipher being used to the Vernam Cipher", listener);
     }
     
     private JMenuItem makeMenuItem(String text, String tip, ActionListener al) {
@@ -76,6 +77,7 @@ public final class MenuBar extends JMenuBar {
         changeCipher.add(baconian);
         changeCipher.add(adfgvx);
         changeCipher.add(cTrans);
+        changeCipher.add(vernam);
         
     }
     
@@ -96,6 +98,7 @@ public final class MenuBar extends JMenuBar {
             else if(src == baconian) {viewManager.changeCipher(viewManager.BACONIAN); }
             else if(src == adfgvx) {viewManager.changeCipher(viewManager.ADFGVX); }
             else if(src == cTrans) {viewManager.changeCipher(viewManager.CTRANS); }
+            else if(src == vernam) {viewManager.changeCipher(viewManager.VERNAM); }
         }
     }
     

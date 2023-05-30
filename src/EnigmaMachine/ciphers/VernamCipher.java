@@ -45,18 +45,7 @@ public class VernamCipher {
         return plainText.toUpperCase();
     }
     
-    /**
-     * Method to check if the length of the cipher/plain text is the same as the key
-     * @param input cipher or plain text
-     * @param key the key
-     * @return true if the length is the same and false otherwise
-     */
-    public static boolean checkKey(String input, String key){
-        if(input.length() == key.length()){
-            return true;
-        }
-        return false;
-    }
+    
     
     public static int modAlphabetLength(int a){
         while(a < 0){

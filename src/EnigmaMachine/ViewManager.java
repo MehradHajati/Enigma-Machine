@@ -10,6 +10,7 @@ import EnigmaMachine.gui.VigenerePanel;
 import EnigmaMachine.gui.BaconianPanel;
 import EnigmaMachine.gui.ADFGVXPanel;
 import EnigmaMachine.gui.ColumnarTranspositionPanel;
+import EnigmaMachine.gui.VernamPanel;
 import EnigmaMachine.gui.JFrameExit;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -32,6 +33,7 @@ public class ViewManager extends JFrameExit{
     public final int BACONIAN = 7;
     public final int ADFGVX = 8;
     public final int CTRANS = 9;
+    public final int VERNAM = 10;
     
     private final EnigmaMachine model;
     private int currentCipher = AFFINE;
@@ -46,6 +48,7 @@ public class ViewManager extends JFrameExit{
     private BaconianPanel baconianPanel;
     private ADFGVXPanel ADFGVXPanel;
     private ColumnarTranspositionPanel CTransPanel;
+    private VernamPanel vernamPanel;
             
     public ViewManager(){
         // Create the window with a title
@@ -94,6 +97,9 @@ public class ViewManager extends JFrameExit{
         
         CTransPanel = new ColumnarTranspositionPanel(this);
         CTransPanel.setBorder(BorderFactory.createEtchedBorder());
+        
+        vernamPanel = new VernamPanel(this);
+        vernamPanel.setBorder(BorderFactory.createEtchedBorder());
     }
     
     private void addObjects(){
@@ -150,6 +156,11 @@ public class ViewManager extends JFrameExit{
             case CTRANS:
                 contentPane.setLayout(new GridLayout(1,1));
                 contentPane.add(CTransPanel);
+                break;
+                
+            case VERNAM:
+                contentPane.setLayout(new GridLayout(1,1));
+                contentPane.add(vernamPanel);
                 break;
         }
         
